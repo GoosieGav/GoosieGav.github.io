@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio — Gavin Luo</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300&q=80" alt="Gavin Luo headshot">
+      <h1>Gavin Luo</h1>
+      <p>Senior Software Engineer</p>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">gh</a>
+        <a href="#" aria-label="X">x</a>
+        <a href="#" aria-label="Email">@</a>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="portfolio.html">Portfolio</a>
+      <a href="#">Services & Pricing</a>
+      <a href="#">Resume</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="theme-row">
+      <span>Dark Mode</span>
+      <button id="theme-toggle" class="toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="knob"></span>
+      </button>
+    </div>
+    <a class="hire" href="#">Hire Me</a>
+  </aside>
+
+  <main class="content">
+    <section class="card portfolio-header">
+      <h2>Portfolio</h2>
+      <p>Preview projects. All content is hardcoded placeholders for now.</p>
+      <a class="btn primary" href="#">Hire Me</a>
+    </section>
+
+    <div class="filters">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="web">Web App</button>
+      <button class="chip" data-filter="mobile">Mobile App</button>
+      <button class="chip" data-filter="frontend">Frontend</button>
+      <button class="chip" data-filter="backend">Backend</button>
+    </div>
+
+    <section class="grid">
+      <article class="proj card" data-tags="web,frontend">
+        <img src="https://images.unsplash.com/photo-1551281044-8e143ee41f38?w=900&q=80" alt="">
+        <div class="proj-body">
+          <h5>Project Heading</h5>
+          <p>Short intro lorem ipsum dolor sit amet, consectetur adipiscing elit. Client: Google.</p>
+        </div>
+      </article>
+
+      <article class="proj card" data-tags="web,backend">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80" alt="">
+        <div class="proj-body">
+          <h5>Project Heading</h5>
+          <p>Backend‑heavy analytics dashboard. Client: Dropbox.</p>
+        </div>
+      </article>
+
+      <article class="proj card" data-tags="frontend">
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=900&q=80" alt="">
+        <div class="proj-body">
+          <h5>Project Heading</h5>
+          <p>UI component system and theming. Client: Startup Hub.</p>
+        </div>
+      </article>
+
+      <article class="proj card" data-tags="mobile">
+        <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35c1?w=900&q=80" alt="">
+        <div class="proj-body">
+          <h5>Project Heading</h5>
+          <p>Mobile app prototype and API. Client: Uber.</p>
+        </div>
+      </article>
+
+      <article class="proj card" data-tags="web,frontend,backend">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=900&q=80" alt="">
+        <div class="proj-body">
+          <h5>Project Heading</h5>
+          <p>Full‑stack build with auth, payments, and CI.</p>
+        </div>
+      </article>
+
+      <article class="proj card" data-tags="web">
+        <img src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?w=900&q=80" alt="">
+        <div class="proj-body">
+          <h5>Project Heading</h5>
+          <p>Marketing site and CMS integration.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
+
