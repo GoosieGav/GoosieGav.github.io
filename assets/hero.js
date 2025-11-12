@@ -60,13 +60,31 @@
   // Smooth scroll for hero scroll button
   const scrollBtn = document.querySelector('.hero-scroll');
   if (scrollBtn) {
-    scrollBtn.addEventListener('click', () => {
+    scrollBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       const portfolioSection = document.getElementById('portfolio');
       if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }
+
+  // Also smooth scroll for menu links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '#hero') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
 
   // Intersection Observer for blur animations
   const observer = new IntersectionObserver((entries) => {

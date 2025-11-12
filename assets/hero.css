@@ -1,8 +1,14 @@
+/* Unified Dark Theme */
+body.with-hero {
+  background: #000;
+  display: block;
+}
+
 /* Hero Section Styles */
 .hero-section {
   position: relative;
   min-height: 100vh;
-  background: #000;
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -270,7 +276,89 @@ body.with-hero .sidebar {
 body.with-hero .content {
   margin-left: 0;
   max-width: 100%;
-  padding: 40px;
+  padding: 60px 40px 80px;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+  color: #e2e8f0;
+}
+
+/* Dark theme portfolio styles */
+body.with-hero .portfolio-header {
+  background: transparent;
+  border: 1px solid #1e293b;
+  color: #fff;
+}
+
+body.with-hero .portfolio-header h2 {
+  color: #C3E41D;
+}
+
+body.with-hero .portfolio-header p {
+  color: #94a3b8;
+}
+
+body.with-hero .btn.primary {
+  background: #C3E41D;
+  color: #000;
+  border-color: #C3E41D;
+  font-weight: 600;
+}
+
+body.with-hero .btn.primary:hover {
+  background: #d4f236;
+}
+
+body.with-hero .filters {
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 16px;
+}
+
+body.with-hero .chip {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+  color: #94a3b8;
+}
+
+body.with-hero .chip:hover,
+body.with-hero .chip.active {
+  border-color: #C3E41D;
+  color: #C3E41D;
+  background: rgba(195, 228, 29, 0.1);
+}
+
+body.with-hero .proj.card {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+body.with-hero .proj.card:hover {
+  transform: translateY(-4px);
+  border-color: #C3E41D;
+  box-shadow: 0 8px 24px rgba(195, 228, 29, 0.15);
+}
+
+body.with-hero .proj-body h5 {
+  color: #fff;
+}
+
+body.with-hero .proj-body p {
+  color: #94a3b8;
+}
+
+body.with-hero .proj img {
+  border-color: #2a2a2a;
+}
+
+/* Smooth gradient transition between sections */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, transparent 0%, #0a0a0a 100%);
+  pointer-events: none;
 }
 
 /* Responsive */
@@ -285,7 +373,11 @@ body.with-hero .content {
   }
   
   body.with-hero .content {
-    padding: 20px;
+    padding: 40px 20px 60px;
+  }
+  
+  body.with-hero .grid {
+    grid-template-columns: 1fr;
   }
 }
 
