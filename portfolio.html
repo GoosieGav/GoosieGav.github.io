@@ -4,9 +4,59 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Portfolio — Gavin Luo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Antic&display=swap">
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/hero.css">
 </head>
-<body>
+<body class="with-hero">
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <header class="hero-header">
+      <nav class="hero-nav">
+        <button type="button" class="hero-menu-btn" aria-label="Open menu" id="heroMenuBtn">
+          <svg class="menu-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="close-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="hero-menu" id="heroMenu" style="display:none">
+          <a href="#hero" class="hero-menu-link active">HOME</a>
+          <a href="#about" class="hero-menu-link">ABOUT</a>
+          <a href="#portfolio" class="hero-menu-link">PROJECTS</a>
+          <a href="#experience" class="hero-menu-link">EXPERIENCE</a>
+          <a href="#education" class="hero-menu-link">EDUCATION</a>
+          <a href="#contact" class="hero-menu-link">CONTACT</a>
+        </div>
+        <div class="hero-signature">G</div>
+        <button type="button" class="hero-theme-toggle" aria-label="Toggle theme" id="heroThemeToggle">
+          <span class="theme-knob"></span>
+        </button>
+      </nav>
+    </header>
+    <main class="hero-main">
+      <div class="hero-name-container">
+        <div class="hero-name blur-text" data-text="GAVIN">GAVIN</div>
+        <div class="hero-name blur-text" data-text="LUO">LUO</div>
+        <div class="hero-profile">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&q=80" alt="Profile">
+        </div>
+      </div>
+      <div class="hero-tagline blur-text" data-text="High School Junior · Python, Data Science, ML">
+        High School Junior · Python, Data Science, ML
+      </div>
+      <button type="button" class="hero-scroll" aria-label="Scroll down">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </main>
+  </section>
+
   <aside class="sidebar">
     <div class="profile">
       <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=300&q=80" alt="Gavin Luo headshot">
@@ -20,8 +70,8 @@
       </div>
     </div>
     <nav class="nav">
-      <a href="hero.html">Hero</a>
-      <a class="active" href="portfolio.html">Portfolio</a>
+      <a href="#hero">Home</a>
+      <a class="active" href="#portfolio">Portfolio</a>
       <a href="#">Services & Pricing</a>
       <a href="#">Resume</a>
       <a href="#">Blog</a>
@@ -36,7 +86,7 @@
     <a class="hire" href="#">Hire Me</a>
   </aside>
 
-  <main class="content">
+  <main class="content" id="portfolio">
     <section class="card portfolio-header">
       <h2>Portfolio</h2>
       <p>Preview projects. All content is hardcoded placeholders for now.</p>
@@ -112,6 +162,7 @@
   </main>
 
   <script src="assets/main.js"></script>
+  <script src="assets/hero.js"></script>
 </body>
 </html>
 
