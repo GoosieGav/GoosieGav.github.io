@@ -1,17 +1,4 @@
 (function(){
-  // Global maintenance redirect (except for maintenance.html itself)
-  try{
-    var isMaintenance = /maintenance\.html(\?.*)?$/.test(location.pathname) || location.pathname.endsWith('/') && location.href.includes('maintenance=true');
-    if (!isMaintenance && typeof window !== 'undefined'){
-      // Toggle this flag to enable/disable maintenance across all routes
-      var MAINTENANCE_MODE = true;
-      if (MAINTENANCE_MODE){
-        var target = (location.pathname.startsWith('/projects/') || location.pathname.endsWith('portfolio.html')) ? '../maintenance.html' : 'maintenance.html';
-        location.replace(target + '?v=1');
-        return;
-      }
-    }
-  }catch(e){}
   const root = document.documentElement;
   const btn = document.getElementById('theme-toggle');
 
