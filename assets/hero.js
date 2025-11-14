@@ -1,47 +1,58 @@
 (function(){
   const root = document.documentElement;
-  const menuBtn = document.getElementById('heroMenuBtn');
-  const menu = document.getElementById('heroMenu');
   const themeToggle = document.getElementById('heroThemeToggle');
-  const menuIcon = menuBtn?.querySelector('.menu-icon');
-  const closeIcon = menuBtn?.querySelector('.close-icon');
+  const signature = document.getElementById('heroSignature');
+  const tubelightNav = document.getElementById('tubelightNav');
   
-  let isMenuOpen = false;
   let isLightMode = false;
 
-  // Menu toggle
-  if (menuBtn && menu) {
-    menuBtn.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
-      menu.style.display = isMenuOpen ? 'block' : 'none';
-      if (menuIcon && closeIcon) {
-        menuIcon.style.display = isMenuOpen ? 'none' : 'block';
-        closeIcon.style.display = isMenuOpen ? 'block' : 'none';
+  // Hide signature on scroll
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (signature) {
+      if (currentScroll > 100) {
+        signature.classList.add('hidden');
+      } else {
+        signature.classList.remove('hidden');
       }
-    });
+    }
+    
+    lastScroll = currentScroll;
+  });
 
-    // Close menu when clicking links
-    menu.querySelectorAll('.hero-menu-link').forEach(link => {
-      link.addEventListener('click', () => {
-        isMenuOpen = false;
-        menu.style.display = 'none';
-        if (menuIcon && closeIcon) {
-          menuIcon.style.display = 'block';
-          closeIcon.style.display = 'none';
-        }
+  // Tubelight navbar active state
+  if (tubelightNav) {
+    const navLinks = tubelightNav.querySelectorAll('a');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
       });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (isMenuOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
-        isMenuOpen = false;
-        menu.style.display = 'none';
-        if (menuIcon && closeIcon) {
-          menuIcon.style.display = 'block';
-          closeIcon.style.display = 'none';
+    // Update active state on scroll
+    const sections = Array.from(navLinks).map(link => {
+      const href = link.getAttribute('href');
+      return href.startsWith('#') ? document.querySelector(href) : null;
+    }).filter(Boolean);
+
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.pageYOffset + 150;
+      
+      sections.forEach((section, index) => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            navLinks[index]?.classList.add('active');
+          }
         }
-      }
+      });
     });
   }
 

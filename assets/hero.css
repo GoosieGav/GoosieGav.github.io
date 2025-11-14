@@ -16,8 +16,68 @@ body.with-hero {
 }
 
 :root.hero-light .hero-section {
-  background: hsl(0 0% 98%);
+  background: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(0 0% 95%) 100%);
   color: hsl(0 0% 10%);
+}
+
+/* Light theme for entire page */
+:root.hero-light body.with-hero {
+  background: hsl(0 0% 98%);
+}
+
+:root.hero-light body.with-hero .content {
+  background: linear-gradient(180deg, hsl(0 0% 95%) 0%, hsl(0 0% 92%) 100%);
+  color: hsl(0 0% 10%);
+}
+
+:root.hero-light body.with-hero .portfolio-header {
+  border-color: hsl(0 0% 85%);
+}
+
+:root.hero-light body.with-hero .portfolio-header h2 {
+  color: #000;
+}
+
+:root.hero-light body.with-hero .portfolio-header p {
+  color: hsl(0 0% 30%);
+}
+
+:root.hero-light body.with-hero .chip {
+  background: #fff;
+  border-color: hsl(0 0% 85%);
+  color: hsl(0 0% 30%);
+}
+
+:root.hero-light body.with-hero .chip:hover,
+:root.hero-light body.with-hero .chip.active {
+  border-color: #C3E41D;
+  color: #000;
+}
+
+:root.hero-light body.with-hero .proj.card {
+  background: #fff;
+  border-color: hsl(0 0% 85%);
+}
+
+:root.hero-light body.with-hero .proj.card:hover {
+  border-color: #C3E41D;
+  box-shadow: 0 8px 24px rgba(195, 228, 29, 0.2);
+}
+
+:root.hero-light body.with-hero .proj-body h5 {
+  color: #000;
+}
+
+:root.hero-light body.with-hero .proj-body p {
+  color: hsl(0 0% 30%);
+}
+
+:root.hero-light body.with-hero .proj img {
+  border-color: hsl(0 0% 85%);
+}
+
+:root.hero-light .hero-section::after {
+  background: linear-gradient(180deg, transparent 0%, hsl(0 0% 95%) 100%);
 }
 
 /* Hero Header */
@@ -38,74 +98,91 @@ body.with-hero {
   margin: 0 auto;
 }
 
-.hero-menu-btn {
-  padding: 8px;
-  background: transparent;
-  border: none;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.3s;
-  position: relative;
+/* Tubelight Navbar */
+.tubelight-navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px;
+  border-radius: 999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.hero-menu-btn:hover {
-  color: #fff;
+:root.hero-light .tubelight-navbar {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-:root.hero-light .hero-menu-btn {
-  color: #666;
-}
-
-:root.hero-light .hero-menu-btn:hover {
-  color: #000;
-}
-
-.hero-menu {
-  position: absolute;
-  top: 70px;
-  left: 24px;
-  background: #000;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-  min-width: 200px;
-  z-index: 100;
-}
-
-:root.hero-light .hero-menu {
-  background: hsl(0 0% 98%);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-.hero-menu-link {
-  display: block;
-  padding: 10px 12px;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
+.tubelight-navbar a {
+  position: relative;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
-:root.hero-light .hero-menu-link {
-  color: hsl(0 0% 10%);
+:root.hero-light .tubelight-navbar a {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.hero-menu-link.active,
-.hero-menu-link:hover {
+.tubelight-navbar a:hover {
   color: #C3E41D;
+}
+
+.tubelight-navbar a.active {
+  color: #C3E41D;
+}
+
+.tubelight-navbar a.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(195, 228, 29, 0.1);
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.tubelight-navbar a.active::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 4px;
+  background: #C3E41D;
+  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(195, 228, 29, 0.5), 0 0 40px rgba(195, 228, 29, 0.3);
 }
 
 .hero-signature {
   font-size: 36px;
   font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
   color: #fff;
-  transition: color 0.3s;
+  transition: color 0.3s, opacity 0.3s, transform 0.3s;
 }
 
 :root.hero-light .hero-signature {
   color: hsl(0 0% 10%);
+}
+
+.hero-signature.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
 }
 
 .hero-theme-toggle {
@@ -378,6 +455,27 @@ body.with-hero .proj img {
   
   body.with-hero .grid {
     grid-template-columns: 1fr;
+  }
+  
+  .tubelight-navbar {
+    gap: 8px;
+  }
+  
+  .tubelight-navbar a {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tubelight-navbar a {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .tubelight-navbar a.active::after {
+    width: 24px;
+    height: 3px;
   }
 }
 
