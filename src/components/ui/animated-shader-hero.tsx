@@ -399,9 +399,9 @@ const Hero: React.FC<HeroProps> = ({
           <div className="mb-8 animate-fade-in-down">
             <div className="flex items-center gap-2 px-6 py-3 bg-orange-500/10 backdrop-blur-md border border-orange-300/30 rounded-full text-sm">
               {trustBadge.icons && (
-                <div className="flex">
+                <div className="flex gap-1">
                   {trustBadge.icons.map((icon, index) => (
-                    <span key={index} className={`text-${index === 0 ? 'yellow' : index === 1 ? 'orange' : 'amber'}-300`}>
+                    <span key={index} className="text-yellow-300">
                       {icon}
                     </span>
                   ))}
