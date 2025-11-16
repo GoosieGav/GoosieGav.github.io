@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Hero from "@/components/ui/animated-shader-hero";
 import { Rocket, Sparkles, Star } from "lucide-react";

@@ -275,15 +275,18 @@ void main(){gl_Position=position;}`;
 class PointerHandler {
   private scale: number;
   private active = false;
-  private pointers = new Map<number, number[]>();
+  private pointers = new Map<number, [number, number]>();
   private lastCoords: [number, number] = [0, 0];
   private moves: [number, number] = [0, 0];
 
   constructor(element: HTMLCanvasElement, scale: number) {
     this.scale = scale;
-    const mapCoords = (x: number, y: number) => {
+    const mapCoords = (x: number, y: number): [number, number] => {
       const rect = element.getBoundingClientRect();
-      return [(x - rect.left) * this.scale, element.height - (y - rect.top) * this.scale];
+      return [
+        (x - rect.left) * this.scale,
+        element.height - (y - rect.top) * this.scale,
+      ];
     };
 
     element.addEventListener("pointerdown", (e) => {
@@ -340,7 +343,7 @@ class PointerHandler {
 
 const useShaderBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | null>(null);
   const rendererRef = useRef<WebGLRenderer | null>(null);
   const pointersRef = useRef<PointerHandler | null>(null);
 
