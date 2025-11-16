@@ -2,14 +2,14 @@ import Hero from "@/components/ui/animated-shader-hero";
 
 function App() {
   const handlePrimaryClick = () => {
-    console.log('Get Started clicked!');
-    // Add your navigation logic here
+    console.log('View My Work clicked!');
+    // Navigate to your portfolio/projects section
     window.open('https://github.com/GoosieGav', '_blank');
   };
 
   const handleSecondaryClick = () => {
-    console.log('Explore Features clicked!');
-    // Add your logic here
+    console.log('Hire Me clicked!');
+    // Navigate to contact section or open email
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
@@ -20,21 +20,21 @@ function App() {
     <div className="w-full">
       <Hero
         trustBadge={{
-          text: "Trusted by forward-thinking teams.",
+          text: "Student Developer • Open to Opportunities",
           icons: ["✨"]
         }}
         headline={{
-          line1: "Launch Your",
-          line2: "Workflow Into Orbit"
+          line1: "Launch Your Ideas",
+          line2: "Into Reality"
         }}
-        subtitle="Supercharge productivity with AI-powered automation and integrations built for the next generation of teams — fast, seamless, and limitless."
+        subtitle="Supercharging projects with modern web, mobile, and AI-powered development — built by a student developer obsessed with building fast, intuitive, and scalable products."
         buttons={{
           primary: {
-            text: "Get Started for Free",
+            text: "View My Work",
             onClick: handlePrimaryClick
           },
           secondary: {
-            text: "Explore Features",
+            text: "Hire Me",
             onClick: handleSecondaryClick
           }
         }}
