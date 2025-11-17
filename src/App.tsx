@@ -171,7 +171,7 @@ function App() {
                   "Optimized for static hosting"
                 ],
                 tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-                image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+                image: "/ichibanbuffetcard.png",
                 githubUrl: "https://github.com/GoosieGav/ichibanbuffet",
                 liveUrl: "https://www.ichibanbuffet.net/"
               },
