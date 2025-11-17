@@ -181,7 +181,6 @@ function App() {
                 features: [
                   "Script directory + detailed script pages",
                   "Video showcases & demonstrations",
-                  "Multiple payment methods",
                   "Discord community integration"
                 ],
                 tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "SPA Routing"],
