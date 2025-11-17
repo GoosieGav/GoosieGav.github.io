@@ -177,7 +177,7 @@ function App() {
               },
               {
                 title: "V!BES HUB – Premium Roblox Script Marketplace",
-                description: "Subscription-based script hub featuring a modern dark gaming theme with comprehensive script directory, showcases, and Discord integration—built for gamers, fast and responsive",
+                description: "Subscription-based script hub with modern dark gaming theme, script directory, and Discord integration—built for gamers",
                 features: [
                   "Script directory + detailed script pages",
                   "Video showcases & demonstrations",
