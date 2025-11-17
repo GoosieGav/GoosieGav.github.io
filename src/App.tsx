@@ -163,15 +163,17 @@ function App() {
           <div className="space-y-24">
             {[
               {
-                title: "AI-Powered Task Manager",
-                description: "Smart productivity app with ML-based task prioritization",
+                title: "Ichiban Buffet – Restaurant Website",
+                description: "Professional restaurant website featuring a vibrant red/black theme with comprehensive menu showcase and location details",
                 features: [
-                  "Natural language task input",
-                  "Intelligent scheduling",
-                  "Cross-platform sync"
+                  "Responsive red/black design",
+                  "Menu, gallery, and location info",
+                  "Optimized for static hosting"
                 ],
-                tech: ["React", "Python", "TensorFlow", "Firebase"],
-                image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80"
+                tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+                image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+                githubUrl: "https://github.com/GoosieGav/ichibanbuffet",
+                liveUrl: "https://www.ichibanbuffet.net/"
               },
               {
                 title: "E-Commerce Platform",
@@ -183,7 +185,9 @@ function App() {
                 ],
                 tech: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
                 image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-                reverse: true
+                reverse: true,
+                githubUrl: "#",
+                liveUrl: "#"
               },
               {
                 title: "Fitness Tracking App",
@@ -194,7 +198,9 @@ function App() {
                   "Social features"
                 ],
                 tech: ["Flutter", "Python", "OpenCV", "AWS"],
-                image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80"
+                image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80",
+                githubUrl: "#",
+                liveUrl: "#"
               }
             ].map((project, index) => (
               <div
@@ -246,14 +252,24 @@ function App() {
 
                   {/* Buttons */}
                   <div className="flex gap-4">
-                    <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 hover:shadow-lg hover:shadow-orange-500/50">
+                    <a 
+                      href={project.githubUrl || '#'} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 hover:shadow-lg hover:shadow-orange-500/50"
+                    >
                       <Github className="w-4 h-4" />
                       View Code
-                    </button>
-                    <button className="flex items-center gap-2 px-6 py-3 border border-orange-500/30 text-orange-300 font-semibold rounded-full hover:bg-orange-500/10 transition-all duration-300">
+                    </a>
+                    <a 
+                      href={project.liveUrl || '#'} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 border border-orange-500/30 text-orange-300 font-semibold rounded-full hover:bg-orange-500/10 transition-all duration-300"
+                    >
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
