@@ -209,7 +209,7 @@ function App() {
                 className={`flex flex-col ${project.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 items-center`}
               >
                 {/* Image */}
-                <div className="lg:w-1/2 group">
+                <div className="lg:w-7/12 group">
                   <div className="relative rounded-2xl overflow-hidden border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20 hover:scale-[1.02]">
                     <img
                       src={project.image}
@@ -221,7 +221,7 @@ function App() {
                 </div>
 
                 {/* Content */}
-                <div className="lg:w-1/2 space-y-6">
+                <div className="lg:w-5/12 space-y-6">
                   <div>
                     <h3 className="text-3xl font-bold text-white mb-3">
                       {project.title}
