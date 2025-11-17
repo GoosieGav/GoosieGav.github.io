@@ -176,18 +176,21 @@ function App() {
                 liveUrl: "https://www.ichibanbuffet.net/"
               },
               {
-                title: "E-Commerce Platform",
-                description: "Full-stack marketplace with real-time inventory management",
+                title: "V!BES HUB – Premium Roblox Script Marketplace",
+                description: "Subscription-based script hub featuring a modern dark gaming theme with comprehensive script directory, showcases, and Discord integration—built for gamers, fast and responsive",
                 features: [
-                  "Secure payment processing",
-                  "Admin dashboard",
-                  "Real-time notifications"
+                  "Script directory + detailed script pages",
+                  "Video showcases",
+                  "Hash-based routing",
+                  "Responsive animated UI",
+                  "Multiple payment methods",
+                  "Discord community integration"
                 ],
-                tech: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-                image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+                tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "SPA Routing"],
+                image: "/v1beshubcard.png",
                 reverse: true,
-                githubUrl: "#",
-                liveUrl: "#"
+                githubUrl: "https://github.com/GoosieGav/v1beshub",
+                liveUrl: "https://v1beshub.vercel.app/#/"
               },
               {
                 title: "Fitness Tracking App",
