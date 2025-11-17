@@ -325,7 +325,7 @@ const Hero: React.FC<HeroProps> = ({
   const canvasRef = useShaderBackground();
 
   return (
-    <div className={`relative w-full h-screen overflow-hidden bg-black ${className}`}>
+    <div className={`relative w-full min-h-screen overflow-hidden bg-black ${className}`}>
       {/* Gradient fade to black at bottom - extended and smoother */}
       <div 
         className="absolute bottom-0 left-0 right-0 h-80 z-20 pointer-events-none"
@@ -401,10 +401,10 @@ const Hero: React.FC<HeroProps> = ({
       />
       
       {/* Hero Content Overlay */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white py-20 px-4">
         {/* Trust Badge */}
         {trustBadge && (
-          <div className="mb-8 animate-fade-in-down">
+          <div className="mb-6 animate-fade-in-down">
             <div className="flex items-center gap-2 px-6 py-3 bg-orange-500/10 backdrop-blur-md border border-orange-300/30 rounded-full text-sm">
               {trustBadge.icons && (
                 <div className="flex gap-1">
@@ -420,27 +420,27 @@ const Hero: React.FC<HeroProps> = ({
           </div>
         )}
 
-        <div className="text-center space-y-6 max-w-5xl mx-auto px-4">
+        <div className="text-center space-y-4 max-w-5xl mx-auto w-full">
           {/* Main Heading with Animation */}
-          <div className="space-y-2">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-orange-300 via-yellow-400 to-amber-300 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
+          <div className="space-y-1">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-orange-300 via-yellow-400 to-amber-300 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
               {headline.line1}
             </h1>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
               {headline.line2}
             </h1>
           </div>
           
           {/* Subtitle with Animation */}
-          <div className="max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
-            <p className="text-lg md:text-xl lg:text-2xl text-orange-100/90 font-light leading-relaxed">
+          <div className="max-w-3xl mx-auto animate-fade-in-up animation-delay-600 mt-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-orange-100/90 font-light leading-relaxed">
               {subtitle}
             </p>
           </div>
           
           {/* CTA Buttons with Animation */}
           {buttons && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up animation-delay-800">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 mb-8 animate-fade-in-up animation-delay-800">
               {buttons.primary && (
                 <button 
                   onClick={buttons.primary.onClick}
