@@ -19,6 +19,24 @@ import {
   ThumbsUp
 } from "lucide-react";
 
+// Wave Divider Component
+const WaveDivider = ({ flip = false }: { flip?: boolean }) => (
+  <div className={`absolute left-0 right-0 ${flip ? 'top-0 rotate-180' : 'bottom-0'} z-10`}>
+    <svg
+      viewBox="0 0 1440 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-full h-auto"
+    >
+      <path
+        d="M0,64 C240,96 480,96 720,64 C960,32 1200,32 1440,64 L1440,120 L0,120 Z"
+        fill="currentColor"
+        className="text-black"
+      />
+    </svg>
+  </div>
+);
+
 function App() {
   const handlePrimaryClick = () => {
     console.log('View My Work clicked!');
@@ -68,7 +86,12 @@ function App() {
 
       {/* What I Do Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-black via-orange-950/10 to-black overflow-hidden">
+        {/* Background patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,146,60,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(251,146,60,0.4) 1px, transparent 1px)',
+          backgroundSize: '32px 32px'
+        }} />
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
@@ -123,7 +146,10 @@ function App() {
       </section>
 
       {/* Featured Projects Section */}
-      <section id="projects" className="relative py-20 px-4 bg-black">
+      <section id="projects" className="relative py-20 px-4 bg-black overflow-hidden">
+        {/* Subtle glow accent */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl" />
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-amber-400 bg-clip-text text-transparent mb-4">
@@ -238,7 +264,18 @@ function App() {
 
       {/* Why Work With Me Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-black via-orange-950/10 to-black overflow-hidden">
+        {/* Wave divider top */}
+        <WaveDivider flip />
+        
+        {/* Background patterns */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,146,60,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: 'linear-gradient(rgba(251,146,60,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(251,146,60,0.3) 1px, transparent 1px)',
+          backgroundSize: '64px 64px'
+        }} />
+        
+        {/* Wave divider bottom */}
+        <WaveDivider />
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
@@ -293,7 +330,9 @@ function App() {
       </section>
 
       {/* Skills & Tools Section */}
-      <section className="relative py-20 px-4 bg-black">
+      <section className="relative py-20 px-4 bg-black overflow-hidden">
+        {/* Ambient glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-orange-500/5 via-transparent to-transparent" />
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-amber-400 bg-clip-text text-transparent mb-4">
@@ -341,7 +380,15 @@ function App() {
 
       {/* Testimonials Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-black via-orange-950/10 to-black overflow-hidden">
+        {/* Wave divider top */}
+        <WaveDivider flip />
+        
+        {/* Background effects */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,146,60,0.1),transparent_50%)]" />
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
+        
+        {/* Wave divider bottom */}
+        <WaveDivider />
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
@@ -398,7 +445,9 @@ function App() {
       </section>
 
       {/* Metrics Section */}
-      <section className="relative py-20 px-4 bg-black">
+      <section className="relative py-20 px-4 bg-black overflow-hidden">
+        {/* Radial glow behind stats */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(251,146,60,0.08),transparent_70%)]" />
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -428,7 +477,18 @@ function App() {
 
       {/* About Me Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-black via-orange-950/10 to-black overflow-hidden">
+        {/* Wave divider top */}
+        <WaveDivider flip />
+        
+        {/* Background effects */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,146,60,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(251,146,60,0.4) 1px, transparent 1px)',
+          backgroundSize: '48px 48px'
+        }} />
+        
+        {/* Wave divider bottom */}
+        <WaveDivider />
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -472,7 +532,10 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="relative py-20 px-4 bg-black">
+      <section id="contact" className="relative py-20 px-4 bg-black overflow-hidden">
+        {/* Glowing orbs */}
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl" />
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-amber-400 bg-clip-text text-transparent mb-4">

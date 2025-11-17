@@ -326,6 +326,9 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <div className={`relative w-full h-screen overflow-hidden bg-black ${className}`}>
+      {/* Gradient fade to black at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-20 pointer-events-none" />
+      
       <style>{`
         @keyframes fade-in-down {
           from {
