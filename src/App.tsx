@@ -180,9 +180,7 @@ function App() {
                 description: "Subscription-based script hub featuring a modern dark gaming theme with comprehensive script directory, showcases, and Discord integration—built for gamers, fast and responsive",
                 features: [
                   "Script directory + detailed script pages",
-                  "Video showcases",
-                  "Hash-based routing",
-                  "Responsive animated UI",
+                  "Video showcases & demonstrations",
                   "Multiple payment methods",
                   "Discord community integration"
                 ],
@@ -233,8 +231,8 @@ function App() {
                     </p>
                     <ul className="space-y-2">
                       {project.features.map((feature, idx) => (
-                        <li key={idx} className="text-gray-400 flex items-start gap-2">
-                          <span className="text-orange-400 mt-1">•</span>
+                        <li key={idx} className="text-gray-400 flex items-center gap-2">
+                          <span className="text-orange-400 flex-shrink-0">•</span>
                           <span>{feature}</span>
                         </li>
                       ))}
