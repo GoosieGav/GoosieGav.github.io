@@ -326,8 +326,13 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <div className={`relative w-full h-screen overflow-hidden bg-black ${className}`}>
-      {/* Gradient fade to black at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-20 pointer-events-none" />
+      {/* Gradient fade to black at bottom - extended and smoother */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-80 z-20 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to top, rgb(0,0,0) 0%, rgb(0,0,0) 20%, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.6) 65%, rgba(0,0,0,0.3) 80%, transparent 100%)'
+        }}
+      />
       
       <style>{`
         @keyframes fade-in-down {
